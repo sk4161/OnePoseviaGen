@@ -90,12 +90,12 @@ bash one23pose/scripts/download_weights.sh
 echo "🔧 Applying patch to transformers' processing_sam.py..."
 TRANSFORMERS_PATH="$CONDA_PREFIX/lib/python3.11/site-packages/transformers/models/sam/processing_sam.py"
 
-if [ -f "$TRANSFORMERS_PATH" ]; then
-    sed -i '121s/.*/            original_sizes = original_sizes.cpu().numpy()/' "$TRANSFORMERS_PATH"
-    echo "✅ Patch applied to $TRANSFORMERS_PATH"
-else
-    echo "⚠️ File not found: $TRANSFORMERS_PATH — Manual patch may be required."
-fi
+# if [ -f "$TRANSFORMERS_PATH" ]; then
+#     sed -i '121s/.*/            original_sizes = original_sizes.cpu().numpy()/' "$TRANSFORMERS_PATH"
+#     echo "✅ Patch applied to $TRANSFORMERS_PATH"
+# else
+#     echo "⚠️ File not found: $TRANSFORMERS_PATH — Manual patch may be required."
+# fi
 
 echo "🎉 Setup completed successfully!"
 
