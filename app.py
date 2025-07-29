@@ -46,8 +46,8 @@ from trellis.utils import postprocessing_utils as postprocessing_utils_hi3dgen
 
 from fpose.recover_scale import recover_scale
 
-from one23pose.scripts.estimate_poses import estimate_poses
-from one23pose.scripts.render_normals import render_high_model_to_normal_video
+from oneposeviagen.scripts.estimate_poses import estimate_poses
+from oneposeviagen.scripts.render_normals import render_high_model_to_normal_video
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -1378,7 +1378,7 @@ print("🎨 Creating Gradio interface...")
 
 with gr.Blocks(
     theme=gr.themes.Soft(),
-    title="🎯 [OnePoseviaGen](https://github.com/GZWSAMA/One-2-3-Pose)",
+    title="🎯 [OnePoseviaGen](https://github.com/GZWSAMA/OnePoseviaGen)",
     css="""
     footer{
     display:none !important;
@@ -1633,8 +1633,8 @@ with gr.Blocks(
     # gr.Markdown("""
     # # ✨ OnePoseviaGen
                 
-    # Welcome to [OnePoseviaGen](https://github.com/GZWSAMA/One-2-3-Pose)! This interface allows you to estimate 7D pose of any object using our model.
-    # For full information, please refer to the [official website](https://gzwsama.github.io/One-2-3-Pose.github.io/).
+    # Welcome to [OnePoseviaGen](https://github.com/GZWSAMA/OnePoseviaGen)! This interface allows you to estimate 7D pose of any object using our model.
+    # For full information, please refer to the [official website](https://gzwsama.github.io/OnePoseviaGen.github.io/).
     # Please cite our paper and give us a star 🌟 if you find this project useful!
     
     # """)

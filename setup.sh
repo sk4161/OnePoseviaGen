@@ -2,7 +2,7 @@
 
 set -e  # Exit immediately if a command fails
 
-echo "🚀 Starting setup for One-2-3-Pose..."
+echo "🚀 Starting setup for OnePoseviaGen..."
 
 # 检查 Python 版本是否为 3.11
 PYTHON_VERSION=$(python --version 2>&1 | awk '{print $2}')
@@ -49,14 +49,14 @@ pip install git+https://github.com/facebookresearch/pytorch3d.git
 
 # Step 5: Build F-Pose
 echo "🛠️ Building F-Pose..."
-cd one23pose/fpose/fpose
+cd oneposeviagen/fpose/fpose
 CMAKE_PREFIX_PATH=$CONDA_PREFIX/lib/python3.11/site-packages/pybind11/share/cmake/pybind11 bash build_all_conda.sh
 cd ../../..
 
 # Step 6: Install packages in development mode
 echo "🛠️ Installing local packages in editable mode..."
 
-cd one23pose
+cd oneposeviagen
 
 # Install fpose
 echo "📦 Installing fpose..."
@@ -84,20 +84,10 @@ cd ..
 
 # Step 7: Download pretrained weights
 echo "📦 Downloading pretrained weights..."
-bash one23pose/scripts/download_weights.sh
+python oneposeviagen/scripts/download_weights.py
 
 # Step 8: Patch Transformers library
 echo "🔧 Applying patch to transformers' processing_sam.py..."
 TRANSFORMERS_PATH="$CONDA_PREFIX/lib/python3.11/site-packages/transformers/models/sam/processing_sam.py"
 
-# if [ -f "$TRANSFORMERS_PATH" ]; then
-#     sed -i '121s/.*/            original_sizes = original_sizes.cpu().numpy()/' "$TRANSFORMERS_PATH"
-#     echo "✅ Patch applied to $TRANSFORMERS_PATH"
-# else
-#     echo "⚠️ File not found: $TRANSFORMERS_PATH — Manual patch may be required."
-# fi
-
 echo "🎉 Setup completed successfully!"
-
-
-#TODO: 将所有BlockDiagonalMask前面都加上attn_bias.
