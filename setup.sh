@@ -76,6 +76,12 @@ cd trellis
 pip install -e .
 cd ..
 
+# Install Amodal3r
+echo "📦 Installing Trellis..."
+cd Amodal3R
+pip install -e .
+cd ..
+
 # Install SpaTrackerV2
 echo "📦 Installing SpaTrackerV2..."
 cd SpaTrackerV2
