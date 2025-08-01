@@ -120,13 +120,10 @@ trellis_pipeline = Amodal3RImageTo3DPipeline.from_pretrained("Sm0kyWu/Amodal3R")
 trellis_pipeline.cuda()
 print("✅ Amodal3R models loaded successfully!")
 
-print("🚀 Initializing trellis models...")
-hi3dgen_pipeline = TrellisImageTo3DPipeline.from_pretrained("checkpoints/Trellis")
+print("🚀 Initializing Hi3dGen_Color models...")
+hi3dgen_pipeline = TrellisImageTo3DPipeline.from_pretrained("checkpoints/Hi3dGen_Color")
 hi3dgen_pipeline.cuda()
-print("✅ Trellis models loaded successfully!")
-
-print("🚀 Initializing Hi3DGen models...")
-
+print("✅ Hi3dGen_Color models loaded successfully!")
 
 gr.set_static_paths(paths=[Path.cwd().absolute()/"_viz"]) 
 

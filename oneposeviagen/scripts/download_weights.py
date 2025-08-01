@@ -23,8 +23,8 @@ def download_file_from_google(url, filename):
         raise RuntimeError(f"Failed to download checkpoint from {url}") from e
     
 # 模型仓库ID
-repo_id_stable3dgen = "Stable-X/trellis-normal-v0-1"
-repo_id_trellis = "jetx/TRELLIS-image-large"
+# repo_id_stable3dgen = "Stable-X/trellis-normal-v0-1"
+repo_id_trellis = "ZhengGeng/Hi3DGen_Color"
 repo_id_spatracker_vggt = "Yuxihenry/SpatialTrackerV2_Front"
 repo_id_spatracker_tracker_offline = "Yuxihenry/SpatialTrackerV2-Offline"
 repo_id_spatracker_tracker_online = "Yuxihenry/SpatialTrackerV2-Online"
