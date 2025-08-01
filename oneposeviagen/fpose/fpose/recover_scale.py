@@ -8,7 +8,7 @@ import numpy as np
 import imageio
 import cv2
 import logging
-from one23pose.locate.fit_object_scale import get_scale
+from oneposeviagen.locate.fit_object_scale import get_scale
 from fpose.estimater import *
 from fpose.datareader import *
 

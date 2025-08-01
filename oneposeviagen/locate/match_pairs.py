@@ -54,8 +54,8 @@ import sys
 import os
 
 sys.path.append(os.getcwd())
-from one23pose.locate.models.matching import Matching
-from one23pose.locate.models.utils import (make_matching_plot, AverageTimer, read_image,)
+from oneposeviagen.locate.models.matching import Matching
+from oneposeviagen.locate.models.utils import (make_matching_plot, AverageTimer, read_image,)
 
 @torch.no_grad()
 def image_pair_matching(input_images, ref_image, output_dir, resize=[-1], 

@@ -11,7 +11,7 @@ from scipy.optimize import minimize
 from PIL import Image
 os.environ["PYOPENGL_PLATFORM"] = "egl"
 sys.path.append(os.getcwd())
-from one23pose.locate.match_pairs import image_pair_matching
+from oneposeviagen.locate.match_pairs import image_pair_matching
 from pytorch3d.renderer import (look_at_view_transform, PerspectiveCameras,
                                 PointLights, RasterizationSettings, BlendParams,
                                 MeshRenderer, MeshRasterizer, SoftPhongShader)

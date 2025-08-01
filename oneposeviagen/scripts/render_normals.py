@@ -188,7 +188,7 @@ def render_normals_to_video(poses, query_image_names, query_intrinsics, scaled_m
 
 def render_high_model_to_normal_video(poses, query_image_names, query_intrinsics, high_mesh_path, output_video_path, fps = 15, device='cpu'):
     import trimesh
-    from one23pose.fpose.fpose.Utils import nvdiffrast_render, make_mesh_tensors
+    from oneposeviagen.fpose.fpose.Utils import nvdiffrast_render, make_mesh_tensors
     import torch
     video_frames = []
     mesh = trimesh.load(high_mesh_path, force='mesh')
