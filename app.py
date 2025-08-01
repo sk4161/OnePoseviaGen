@@ -1797,7 +1797,7 @@ with gr.Blocks(
             <p style='color: #5d4037; margin: 0 0 15px 0; font-size: 14px; line-height: 1.5;'>
                 We sincerely thank the authors for their outstanding contributions to the computer vision community.
             </p>
-            <a href="https://github.com/Sm0kyWu/Amodal3R" target="_blank" 
+            <a href="https://github.com/NVlabs/FoundationPose" target="_blank" 
                style='display: inline-flex; align-items: center; gap: 8px; 
                       background: rgba(255, 193, 7, 0.15); color: #5d4037; 
                       padding: 10px 20px; border-radius: 25px; text-decoration: none; 
@@ -1805,7 +1805,7 @@ with gr.Blocks(
                       transition: all 0.3s ease;'
                onmouseover="this.style.background='rgba(255, 193, 7, 0.25)'; this.style.transform='translateY(-2px)'"
                onmouseout="this.style.background='rgba(255, 193, 7, 0.15)'; this.style.transform='translateY(0)'">
-                📚 Visit Amodal3R Repository
+                📚 Visit FoundationPose Repository
             </a>
             <a href="https://github.com/henry123-boy/SpaTrackerV2" target="_blank" 
                style='display: inline-flex; align-items: center; gap: 8px; 
@@ -1817,6 +1817,16 @@ with gr.Blocks(
                onmouseout="this.style.background='rgba(255, 193, 7, 0.15)'; this.style.transform='translateY(0)'">
                 📚 Visit SpatialTracker V2 Repository
             </a>
+            <a href="https://github.com/microsoft/TRELLIS" target="_blank" 
+               style='display: inline-flex; align-items: center; gap: 8px; 
+                      background: rgba(255, 193, 7, 0.15); color: #5d4037; 
+                      padding: 10px 20px; border-radius: 25px; text-decoration: none; 
+                      font-weight: bold; font-size: 14px; border: 1px solid rgba(255, 193, 7, 0.3);
+                      transition: all 0.3s ease;'
+               onmouseover="this.style.background='rgba(255, 193, 7, 0.25)'; this.style.transform='translateY(-2px)'"
+               onmouseout="this.style.background='rgba(255, 193, 7, 0.15)'; this.style.transform='translateY(0)'">
+                📚 Visit TRELLIS Repository
+            </a>
             <a href="https://github.com/Stable-X/Stable3DGen" target="_blank" 
                style='display: inline-flex; align-items: center; gap: 8px; 
                       background: rgba(255, 193, 7, 0.15); color: #5d4037; 
@@ -1827,7 +1837,7 @@ with gr.Blocks(
                onmouseout="this.style.background='rgba(255, 193, 7, 0.15)'; this.style.transform='translateY(0)'">
                 📚 Visit Stable3DGen Repository
             </a>
-            <a href="https://github.com/NVlabs/FoundationPose" target="_blank" 
+            <a href="https://github.com/Sm0kyWu/Amodal3R" target="_blank" 
                style='display: inline-flex; align-items: center; gap: 8px; 
                       background: rgba(255, 193, 7, 0.15); color: #5d4037; 
                       padding: 10px 20px; border-radius: 25px; text-decoration: none; 
@@ -1835,7 +1845,7 @@ with gr.Blocks(
                       transition: all 0.3s ease;'
                onmouseover="this.style.background='rgba(255, 193, 7, 0.25)'; this.style.transform='translateY(-2px)'"
                onmouseout="this.style.background='rgba(255, 193, 7, 0.15)'; this.style.transform='translateY(0)'">
-                📚 Visit FoundationPose Repository
+                📚 Visit Amodal3R Repository
             </a>
             <a href="https://github.com/facebookresearch/sam2" target="_blank" 
                style='display: inline-flex; align-items: center; gap: 8px; 
