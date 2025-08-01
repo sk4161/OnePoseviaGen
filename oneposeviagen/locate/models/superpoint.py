@@ -43,6 +43,7 @@
 from pathlib import Path
 import torch
 from torch import nn
+import os
 
 def simple_nms(scores, nms_radius: int):
     """ Fast Non-maximum suppression to remove nearby points """
@@ -133,8 +134,8 @@ class SuperPoint(nn.Module):
             c5, self.config['descriptor_dim'],
             kernel_size=1, stride=1, padding=0)
 
-        path = Path(__file__).parent / 'weights/superpoint_v1.pth'
-        if path.exists():
+        path = 'checkpoints/OnePoseViaGen/SuperPoint/superpoint_v1.pth'
+        if os.path.exists(path):
             self.load_state_dict(torch.load(str(path)))
         else:
             print(f"File {path} not found. Downloading weights...")

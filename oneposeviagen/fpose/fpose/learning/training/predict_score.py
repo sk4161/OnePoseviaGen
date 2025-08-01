@@ -120,9 +120,9 @@ class ScorePredictor:
     self.run_name = "2024-01-11-20-02-45"
 
     model_name = 'model_best.pth'
-    ckpt_dir = f'checkpoints/FoundationPose/{self.run_name}/{model_name}'
+    ckpt_dir = f'checkpoints/OnePoseViaGen/FoundationPose/{self.run_name}/{model_name}'
 
-    self.cfg = OmegaConf.load(f'checkpoints/FoundationPose/{self.run_name}/config.yml')
+    self.cfg = OmegaConf.load(f'checkpoints/OnePoseViaGen/FoundationPose/{self.run_name}/config.yml')
 
     self.cfg['ckpt_dir'] = ckpt_dir
     self.cfg['enable_amp'] = True

@@ -14,9 +14,7 @@ except ImportError:
 
 # Hugging Face model mapping
 HF_MODELS = {
-    'vit_b': 'facebook/sam-vit-base',
-    'vit_l': 'facebook/sam-vit-large', 
-    'vit_h': 'facebook/sam-vit-huge'
+    'vit_l': 'checkpoints/OnePoseViaGen/SAM'
 }
 
 class HFSamPredictor:
@@ -62,8 +60,7 @@ class HFSamPredictor:
             raise ImportError("transformers and huggingface_hub are required for HF SAM models")
         
         # Map model type to HF model name if needed
-        if model_name in HF_MODELS:
-            model_name = HF_MODELS[model_name]
+        model_name = HF_MODELS[model_name]
         
         print(f"Loading SAM model from Hugging Face: {model_name}")
         

@@ -102,26 +102,26 @@ def create_user_temp_dir():
 
 from huggingface_hub import hf_hub_download
 
-vggt4track_model = VGGT4Track.from_pretrained("checkpoints/SpatialTrackerV2/vggt_front")
+vggt4track_model = VGGT4Track.from_pretrained("checkpoints/OnePoseViaGen/SpatialTrackerV2/vggt_front")
 vggt4track_model.eval()
 vggt4track_model = vggt4track_model.to("cuda")
 
 # Global model initialization
 print("🚀 Initializing local SpatialTrackerV2 models...")
-tracker_model_offline = Predictor.from_pretrained("checkpoints/SpatialTrackerV2/tracker_offline")
+tracker_model_offline = Predictor.from_pretrained("checkpoints/OnePoseViaGen/SpatialTrackerV2/tracker_offline")
 tracker_model_offline.eval()
-tracker_model_online = Predictor.from_pretrained("checkpoints/SpatialTrackerV2/tracker_online")
+tracker_model_online = Predictor.from_pretrained("checkpoints/OnePoseViaGen/SpatialTrackerV2/tracker_online")
 tracker_model_online.eval() 
 predictor = get_sam_predictor()
 print("✅ SpatialTrackerV2 models loaded successfully!")
 
 print("🚀 Initializing Amodal3R models...")
-trellis_pipeline = Amodal3RImageTo3DPipeline.from_pretrained("Sm0kyWu/Amodal3R")
+trellis_pipeline = Amodal3RImageTo3DPipeline.from_pretrained("checkpoints/OnePoseViaGen/Amodal3R")
 trellis_pipeline.cuda()
 print("✅ Amodal3R models loaded successfully!")
 
 print("🚀 Initializing Hi3dGen_Color models...")
-hi3dgen_pipeline = TrellisImageTo3DPipeline.from_pretrained("checkpoints/Hi3dGen_Color")
+hi3dgen_pipeline = TrellisImageTo3DPipeline.from_pretrained("checkpoints/OnePoseViaGen/Hi3dGen_Color")
 hi3dgen_pipeline.cuda()
 print("✅ Hi3dGen_Color models loaded successfully!")
 
@@ -493,16 +493,16 @@ def initialize_predictor(checkpoint):
     """Initialize the SAM2 video predictor with the specified checkpoint."""
     global predictor_sam
     if checkpoint == "tiny":
-        sam2_checkpoint = "checkpoints/SAM2/sam2_hiera_tiny.pt"
+        sam2_checkpoint = "checkpoints/OnePoseViaGen/SAM2/sam2_hiera_tiny.pt"
         model_cfg = "sam2_hiera_t.yaml"
     elif checkpoint == "small":
-        sam2_checkpoint = "checkpoints/SAM2/sam2_hiera_small.pt"
+        sam2_checkpoint = "checkpoints/OnePoseViaGen/SAM2/sam2_hiera_small.pt"
         model_cfg = "sam2_hiera_s.yaml"
     elif checkpoint == "base-plus":
-        sam2_checkpoint = "checkpoints/SAM2/sam2_hiera_base_plus.pt"
+        sam2_checkpoint = "checkpoints/OnePoseViaGen/SAM2/sam2_hiera_base_plus.pt"
         model_cfg = "sam2_hiera_b+.yaml"
     elif checkpoint == "large":
-        sam2_checkpoint = "checkpoints/SAM2/sam2_hiera_large.pt"
+        sam2_checkpoint = "checkpoints/OnePoseViaGen/SAM2/sam2_hiera_large.pt"
         model_cfg = "sam2_hiera_l.yaml"
     else:
         raise ValueError("Invalid checkpoint")
@@ -1781,6 +1781,76 @@ with gr.Blocks(
                 visible=False
             )
 
+    # Acknowledgments Section
+    gr.HTML("""
+    <div style='background: linear-gradient(135deg, #fff8e1 0%, #fffbf0 100%); 
+                border-radius: 8px; padding: 20px; margin: 15px 0; 
+                box-shadow: 0 2px 8px rgba(255, 193, 7, 0.1);
+                border: 1px solid rgba(255, 193, 7, 0.2);'>
+        <div style='text-align: center;'>
+            <h3 style='color: #5d4037; margin: 0 0 10px 0; font-size: 18px; font-weight: 600;'>
+                📚 Acknowledgments
+            </h3>
+            <p style='color: #5d4037; margin: 0 0 15px 0; font-size: 14px; line-height: 1.5;'>
+                Our code is heavily adapted from the following works, and our visualization is built upon SpatialTracker V2.
+            </p>
+            <p style='color: #5d4037; margin: 0 0 15px 0; font-size: 14px; line-height: 1.5;'>
+                We sincerely thank the authors for their outstanding contributions to the computer vision community.
+            </p>
+            <a href="https://github.com/Sm0kyWu/Amodal3R" target="_blank" 
+               style='display: inline-flex; align-items: center; gap: 8px; 
+                      background: rgba(255, 193, 7, 0.15); color: #5d4037; 
+                      padding: 10px 20px; border-radius: 25px; text-decoration: none; 
+                      font-weight: bold; font-size: 14px; border: 1px solid rgba(255, 193, 7, 0.3);
+                      transition: all 0.3s ease;'
+               onmouseover="this.style.background='rgba(255, 193, 7, 0.25)'; this.style.transform='translateY(-2px)'"
+               onmouseout="this.style.background='rgba(255, 193, 7, 0.15)'; this.style.transform='translateY(0)'">
+                📚 Visit Amodal3R Repository
+            </a>
+            <a href="https://github.com/henry123-boy/SpaTrackerV2" target="_blank" 
+               style='display: inline-flex; align-items: center; gap: 8px; 
+                      background: rgba(255, 193, 7, 0.15); color: #5d4037; 
+                      padding: 10px 20px; border-radius: 25px; text-decoration: none; 
+                      font-weight: bold; font-size: 14px; border: 1px solid rgba(255, 193, 7, 0.3);
+                      transition: all 0.3s ease;'
+               onmouseover="this.style.background='rgba(255, 193, 7, 0.25)'; this.style.transform='translateY(-2px)'"
+               onmouseout="this.style.background='rgba(255, 193, 7, 0.15)'; this.style.transform='translateY(0)'">
+                📚 Visit SpatialTracker V2 Repository
+            </a>
+            <a href="https://github.com/Stable-X/Stable3DGen" target="_blank" 
+               style='display: inline-flex; align-items: center; gap: 8px; 
+                      background: rgba(255, 193, 7, 0.15); color: #5d4037; 
+                      padding: 10px 20px; border-radius: 25px; text-decoration: none; 
+                      font-weight: bold; font-size: 14px; border: 1px solid rgba(255, 193, 7, 0.3);
+                      transition: all 0.3s ease;'
+               onmouseover="this.style.background='rgba(255, 193, 7, 0.25)'; this.style.transform='translateY(-2px)'"
+               onmouseout="this.style.background='rgba(255, 193, 7, 0.15)'; this.style.transform='translateY(0)'">
+                📚 Visit Stable3DGen Repository
+            </a>
+            <a href="https://github.com/NVlabs/FoundationPose" target="_blank" 
+               style='display: inline-flex; align-items: center; gap: 8px; 
+                      background: rgba(255, 193, 7, 0.15); color: #5d4037; 
+                      padding: 10px 20px; border-radius: 25px; text-decoration: none; 
+                      font-weight: bold; font-size: 14px; border: 1px solid rgba(255, 193, 7, 0.3);
+                      transition: all 0.3s ease;'
+               onmouseover="this.style.background='rgba(255, 193, 7, 0.25)'; this.style.transform='translateY(-2px)'"
+               onmouseout="this.style.background='rgba(255, 193, 7, 0.15)'; this.style.transform='translateY(0)'">
+                📚 Visit FoundationPose Repository
+            </a>
+            <a href="https://github.com/facebookresearch/sam2" target="_blank" 
+               style='display: inline-flex; align-items: center; gap: 8px; 
+                      background: rgba(255, 193, 7, 0.15); color: #5d4037; 
+                      padding: 10px 20px; border-radius: 25px; text-decoration: none; 
+                      font-weight: bold; font-size: 14px; border: 1px solid rgba(255, 193, 7, 0.3);
+                      transition: all 0.3s ease;'
+               onmouseover="this.style.background='rgba(255, 193, 7, 0.25)'; this.style.transform='translateY(-2px)'"
+               onmouseout="this.style.background='rgba(255, 193, 7, 0.15)'; this.style.transform='translateY(0)'">
+                📚 Visit SAM-2 Repository
+            </a>
+        </div>
+    </div>
+    """)
+
     # Footer
     gr.HTML("""
     <div style='text-align: center; margin: 20px 0 10px 0;'>
@@ -1850,7 +1920,7 @@ if __name__ == "__main__":
     
     demo.launch(
         server_name="0.0.0.0",
-        server_port=3333,
+        server_port=3393,
         share=True,
         debug=True,
         show_error=True,

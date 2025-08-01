@@ -92,8 +92,4 @@ cd ..
 echo "📦 Downloading pretrained weights..."
 python oneposeviagen/scripts/download_weights.py
 
-# Step 8: Patch Transformers library
-echo "🔧 Applying patch to transformers' processing_sam.py..."
-TRANSFORMERS_PATH="$CONDA_PREFIX/lib/python3.11/site-packages/transformers/models/sam/processing_sam.py"
-
 echo "🎉 Setup completed successfully!"

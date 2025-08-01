@@ -18,7 +18,7 @@ models = {
 }
 
 
-def get_sam_predictor(model_type='vit_b', device=None, image=None, use_hf=True, predictor=None):
+def get_sam_predictor(model_type='vit_l', device=None, image=None, predictor=None):
   """
   Get SAM predictor with option to use HuggingFace version
   
@@ -30,24 +30,9 @@ def get_sam_predictor(model_type='vit_b', device=None, image=None, use_hf=True, 
   """
   if predictor is not None:
     return predictor
-  if use_hf:
-    if not HF_AVAILABLE:
-      raise ImportError("HuggingFace SAM not available. Install transformers and huggingface_hub.")
-    return get_hf_sam_predictor(model_type, device, image)
-  
-  # Original SAM logic
-  if device is None and torch.cuda.is_available():
-    device = 'cuda'
-  elif device is None:
-    device = 'cpu'
-  # sam model
-  sam = sam_model_registry[model_type](checkpoint=models[model_type])
-  sam = sam.to(device)
-
-  predictor = SamPredictor(sam)
-  if image is not None:
-    predictor.set_image(image)
-  return predictor
+  if not HF_AVAILABLE:
+    raise ImportError("HuggingFace SAM not available. Install transformers and huggingface_hub.")
+  return get_hf_sam_predictor(model_type, device, image)
 
 
 def run_inference(predictor, input_x, selected_points, multi_object: bool = False):

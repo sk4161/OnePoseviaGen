@@ -221,8 +221,9 @@ class SuperGlue(nn.Module):
         self.register_parameter('bin_score', bin_score)
 
         assert self.config['weights'] in ['indoor', 'outdoor']
-        path = Path(__file__).parent
-        path = path / 'weights/superglue_{}.pth'.format(self.config['weights'])
+        path = 'checkpoints/OnePoseViaGen/SuperGlue'
+        path = Path(path)
+        path = path / 'superglue_{}.pth'.format(self.config['weights'])
         self.load_state_dict(torch.load(str(path)))
         print('Loaded SuperGlue model (\"{}\" weights)'.format(
             self.config['weights']))
