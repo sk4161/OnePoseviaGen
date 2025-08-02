@@ -82,6 +82,7 @@ Before running the `setup.sh` script, ensure you have the following prerequisite
 
 ## Troubleshooting
 [Indices should be on the same device](https://github.com/GZWSAMA/OnePoseviaGen/issues/6)
+
 [Can't convert cuda:0 device type tensor to numpy](https://github.com/GZWSAMA/OnePoseviaGen/issues/7)
 
 ---
