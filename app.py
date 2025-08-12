@@ -121,7 +121,7 @@ trellis_pipeline.cuda()
 print("✅ Amodal3R models loaded successfully!")
 
 print("🚀 Initializing Hi3dGen_Color models...")
-hi3dgen_pipeline = TrellisImageTo3DPipeline.from_pretrained("checkpoints/OnePoseViaGen/Hi3dGen_Color")
+hi3dgen_pipeline = TrellisImageTo3DPipeline.from_pretrained("checkpoints/OnePoseViaGen/Hi3DGen_Color")
 hi3dgen_pipeline.cuda()
 print("✅ Hi3dGen_Color models loaded successfully!")
 
@@ -1930,7 +1930,7 @@ if __name__ == "__main__":
     
     demo.launch(
         server_name="0.0.0.0",
-        server_port=3343,
+        server_port=3353,
         share=True,
         debug=True,
         show_error=True,
