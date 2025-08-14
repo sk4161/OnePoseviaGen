@@ -6,7 +6,16 @@
 <a href="https://gzwsama.github.io/OnePoseviaGen.github.io/"><img src="https://img.shields.io/badge/Project_Page-green" alt="Project Page"></a>
 <a href='https://huggingface.co/spaces/ZhengGeng/OnePoseviaGen'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Live_Demo-blue'></a>
 
-Zheng Geng, Nan Wang, Shaocong Xu, Bohan Li, Zhaoxi Chen, Chongjie Ye, Sida Peng, Hao Zhao
+<p class="text-lg">
+   <a href="https://github.com/GZWSAMA" class="text-white hover:underline hover:text-gray-300 transition-colors duration-200">Zheng Geng</a>,
+   <a href="https://bigcileng.github.io/" class="text-white hover:underline hover:text-gray-300 transition-colors duration-200">Nan Wang</a>,
+   <a href="https://daniellli.github.io/" class="text-white hover:underline hover:text-gray-300 transition-colors duration-200">Shaocong Xu</a>,
+   <a href="https://scholar.google.com/citations?user=V-YdQiAAAAAJ&hl=zh-CN" class="text-white hover:underline hover:text-gray-300 transition-colors duration-200">Bohan Li</a>,
+   <a href="https://frozenburning.github.io/" class="text-white hover:underline hover:text-gray-300 transition-colors duration-200">Zhaoxi Chen</a>,
+   <a href="https://hugoycj.github.io/" class="text-white hover:underline hover:text-gray-300 transition-colors duration-200">Chongjie Ye</a>,
+   <a href="http://pengsida.net/" class="text-white hover:underline hover:text-gray-300 transition-colors duration-200">Sida Peng</a>,
+   <a href="https://sites.google.com/view/fromandto" class="text-white hover:underline hover:text-gray-300 transition-colors duration-200">Hao Zhao</a>
+</p>
 </div>
 
 ---
