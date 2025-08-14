@@ -172,6 +172,7 @@ def main():
         shutil.copy(viz_html_path, temp_path / "index.html")
         
         os.chdir(temp_path)
+        print(f"Files ready in {temp_path}. Starting HTTP server...")
         
         host = "0.0.0.0"
         port = int(args.port)

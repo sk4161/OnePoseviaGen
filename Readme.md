@@ -8,6 +8,9 @@
 
 Zheng Geng, Nan Wang, Shaocong Xu, Bohan Li, Zhaoxi Chen, Chongjie Ye, Sida Peng, Hao Zhao
 </div>
+---
+
+![Manipulation](assets/manipulation.gif)
 
 ---
 
