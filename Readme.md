@@ -1,4 +1,3 @@
-
 <div align="center">
 <h1>One View, Many Worlds: Single-Image to 3D Object Meets Generative Domain Randomization for One-Shot 6D Pose Estimation</h1>
 
