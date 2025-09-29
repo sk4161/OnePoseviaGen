@@ -19,7 +19,7 @@ albumentations
 matplotlib
 mediapy
 scikit-image
-pycolmap==3.11.1
+pycolmap==3.12.6
 git+https://github.com/facebookresearch/segment-anything.git
 git+https://github.com/EasternJournalist/utils3d.git#egg=utils3d
 huggingface_hub
@@ -58,3 +58,6 @@ warp-lang==1.0.2
 #amodal3r
 rembg
 onnxruntime
+
+# additional requirements
+plyfile
