@@ -50,6 +50,7 @@ from trellis.utils import render_utils as render_utils_hi3dgen
 from oneposeviagen.scripts.estimate_poses import estimate_poses
 from oneposeviagen.scripts.render_normals import render_high_model_to_normal_video
 
+torch.hub.load("facebookresearch/dinov2", "dinov2_vits14")
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
