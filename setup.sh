@@ -26,7 +26,7 @@ pip install -r requirements.txt
 
 # Step 3: Install Boost and Eigen via Conda
 echo "📦 Installing Boost and Eigen via Conda..."
-# conda install -c conda-forge boost -y
+conda install -c conda-forge boost -y
 conda install -c conda-forge eigen=3.4.0 -y
 
 # Step 4: Clone and install extensions
